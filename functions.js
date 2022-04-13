@@ -55,7 +55,7 @@ background(240)
     for (var i=0; i < squares.length; i++) {
     //z = 2* (1/9 * windowWidth) + (1/9 * windowWidth) * i;
     //squares[i].show(z,(windowHeight/2) - ((1/9 * windowWidth)/2))
-        console.log(windowHeight)
+        //console.log(windowHeight)
         z = (1/9 * 800) + (1/9 * 800) * i;
         squares[i].show(4/9 * windowWidth,z)
 
