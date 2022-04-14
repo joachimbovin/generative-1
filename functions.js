@@ -61,15 +61,15 @@ function draw() {
     text('Generative piece in A (440 hertz) built using the javascript libraries P5.js and Flocking.js.', 20, 45);
     text('Each square represents a pitch of a pentatonic scale tuned using the Pythagorean tuning system.', 20, 60);
     text('Can be played indefinitely.', 20, 75);
-    text('No sound on mobile devices, sorry!', 20, 90);
+    text('No sounds on Chrome yet, sorry!', 20, 90);
 
 
     for (var i = 0; i < squares.length; i++) {
-        z = 2* (1/9 * windowWidth) + (1/9 * windowWidth) * i;
-        squares[i].show(z,(windowHeight/2) - ((1/9 * windowWidth)/2))
+        //z = 2* (1/9 * windowWidth) + (1/9 * windowWidth) * i;
+        //squares[i].show(z,(windowHeight/2) - ((1/9 * windowWidth)/2))
         //console.log(windowHeight)
-        //z = (1 / 9 * 800) + (1 / 9 * 800) * i;
-        //squares[i].show(4 / 9 * windowWidth, z)
+        z = (1 / 9 * 800) + (1 / 9 * 800) * i;
+        squares[i].show(4 / 9 * windowWidth, z)
 
     }
 
@@ -95,7 +95,7 @@ function draw() {
 function start_flocking() {
 
     /* addToEnvironment */
-    console.log("starting")
+    console.log("starting");
     environment.start()
 
 }
@@ -103,14 +103,14 @@ function start_flocking() {
 function stop_flocking() {
 
     /* addToEnvironment */
-    console.log("stopping")
+    console.log("stopping");
     environment.stop()
 
 }
 
 
 var environment = flock.init();
-environment.stop()
+environment.stop();
 
 var fundamental = 220;
 

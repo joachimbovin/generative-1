@@ -42,9 +42,9 @@ class Square {
 
         if (this.B === 0) {
             polySynth[pitch_on.action](pitch_on.noteName, pitch_on.change)
+            //this.B = this.color_list[randomNumber_2];
             this.B = this.color_list[randomNumber_2];
-            this.R = this.color_list[randomNumber];
-            this.G = this.color_list[randomNumber];
+            //this.G = this.color_list[randomNumber];
             this.alpha = 150;
             //console.log("note on")
         } else {
