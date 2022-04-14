@@ -31,6 +31,18 @@ function setup() {
         squares[2].triggerNote(thirdOn, thirdOff);
     }, 10000);
 
+
+    button = createButton('Start Sound');
+    button.position(20, 110);
+    button.mousePressed(start_flocking);
+
+    button = createButton('Stop Sound');
+    button.position(20, 140);
+    button.mousePressed(stop_flocking);
+
+
+
+
 }
 
 
@@ -38,7 +50,7 @@ function setup() {
 function draw() {
 
 
-background(240)
+    background(240)
 
     fill(0)
     textStyle(BOLD);
@@ -49,45 +61,56 @@ background(240)
     text('Generative piece in A (440 hertz) built using the javascript libraries P5.js and Flocking.js.', 20, 45);
     text('Each square represents a pitch of a pentatonic scale tuned using the Pythagorean tuning system.', 20, 60);
     text('Can be played indefinitely.', 20, 75);
+    text('No sound on mobile devices, sorry!', 20, 90);
 
 
-
-    for (var i=0; i < squares.length; i++) {
-    //z = 2* (1/9 * windowWidth) + (1/9 * windowWidth) * i;
-    //squares[i].show(z,(windowHeight/2) - ((1/9 * windowWidth)/2))
+    for (var i = 0; i < squares.length; i++) {
+        z = 2* (1/9 * windowWidth) + (1/9 * windowWidth) * i;
+        squares[i].show(z,(windowHeight/2) - ((1/9 * windowWidth)/2))
         //console.log(windowHeight)
-        z = (1/9 * 800) + (1/9 * 800) * i;
-        squares[i].show(4/9 * windowWidth,z)
+        //z = (1 / 9 * 800) + (1 / 9 * 800) * i;
+        //squares[i].show(4 / 9 * windowWidth, z)
+
+    }
+
+/*
+
+    function mousePressed() {
+
+        squares[0].clicked(rootOn, rootOff);
+        squares[1].clicked(secondOn, secondOff);
+        squares[2].clicked(thirdOn, thirdOff);
+        squares[3].clicked(fifthOn, fifthOff);
+        squares[4].clicked(sixthOn, sixthOff);
+
+    }
+*/
 
 }
-
-
-}
-
-
-
-
-function mousePressed() {
-
-    squares[0].clicked(rootOn, rootOff);
-    squares[1].clicked(secondOn, secondOff);
-    squares[2].clicked(thirdOn, thirdOff);
-    squares[3].clicked(fifthOn, fifthOff);
-    squares[4].clicked(sixthOn, sixthOff);
-
-}
-
-
 
 //*************************************FLOCKING*************************
 
 /*Here's the basic lifecycle for a Flocking application:*/
 
+function start_flocking() {
+
+    /* addToEnvironment */
+    console.log("starting")
+    environment.start()
+
+}
+
+function stop_flocking() {
+
+    /* addToEnvironment */
+    console.log("stopping")
+    environment.stop()
+
+}
+
+
 var environment = flock.init();
-environment.start()
-/* addToEnvironment */
-
-
+environment.stop()
 
 var fundamental = 220;
 
@@ -208,5 +231,3 @@ var sixthOff =    {
     change: {
         "carrier.freq": fundamental * five
     }};
-
-

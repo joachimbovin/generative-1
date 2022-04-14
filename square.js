@@ -46,13 +46,13 @@ class Square {
             this.R = this.color_list[randomNumber];
             this.G = this.color_list[randomNumber];
             this.alpha = 150;
-            console.log("note on")
+            //console.log("note on")
         } else {
             this.B = 0;
             this.alpha = 0;
 
             polySynth[pitch_off.action](pitch_off.noteName)
-            console.log("note off")
+            //console.log("note off")
 
         }
     }
