@@ -62,6 +62,7 @@ function draw() {
     text('Each square represents a pitch of a pentatonic scale tuned using the Pythagorean tuning system.', 20, 60);
     text('Can be played indefinitely.', 20, 75);
     text('No sounds on Chrome yet, sorry!', 20, 90);
+    text('On mobile devices: make sure your ringer is not set on silent (or use headphones)', 20, 105);
 
 
     for (var i = 0; i < squares.length; i++) {
